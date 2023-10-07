@@ -3,12 +3,25 @@ import { Clear } from './Clear/Clear';
 import { Display } from './Display/Display';
 import './Main.css';
 import { useState } from 'react';
+import { evaluate } from 'mathjs';
 
 export const Main = () => {
+  /* Initial State of Display Input */
   const [input, setInput] = useState('');
 
+  // Add Input on Display
   const addInput = (value) => {
     setInput(`${input}${value}`);
+  };
+
+  // Clear Button
+  const clearDisplay = () => {
+    setInput('');
+  };
+
+  // Equal Fn
+  const equalFn = () => {
+    setInput(evaluate(input));
   };
 
   return (
@@ -19,31 +32,31 @@ export const Main = () => {
             <Display input={input} />
           </div>
           <div className='row'>
-            <Clear>Clear</Clear>
-            <Button>÷</Button>
+            <Clear handleClick={clearDisplay}>Clear</Clear>
+            <Button handleClick={addInput}>/</Button>
           </div>
           <div className='row'>
-            <Button onClick={addInput}>7</Button>
-            <Button onClick={addInput}>8</Button>
-            <Button onClick={addInput}>9</Button>
-            <Button onClick={addInput}>×</Button>
+            <Button handleClick={addInput}>7</Button>
+            <Button handleClick={addInput}>8</Button>
+            <Button handleClick={addInput}>9</Button>
+            <Button handleClick={addInput}>*</Button>
           </div>
           <div className='row'>
-            <Button onClick={addInput}>4</Button>
-            <Button onClick={addInput}>5</Button>
-            <Button onClick={addInput}>6</Button>
-            <Button onClick={addInput}>-</Button>
+            <Button handleClick={addInput}>4</Button>
+            <Button handleClick={addInput}>5</Button>
+            <Button handleClick={addInput}>6</Button>
+            <Button handleClick={addInput}>-</Button>
           </div>
           <div className='row'>
-            <Button onClick={addInput}>1</Button>
-            <Button onClick={addInput}>2</Button>
-            <Button onClick={addInput}>3</Button>
-            <Button onClick={addInput}>+</Button>
+            <Button handleClick={addInput}>1</Button>
+            <Button handleClick={addInput}>2</Button>
+            <Button handleClick={addInput}>3</Button>
+            <Button handleClick={addInput}>+</Button>
           </div>
           <div className='row'>
-            <Button onClick={addInput}>0</Button>
-            <Button onClick={addInput}>.</Button>
-            <Button onClick={addInput}>=</Button>
+            <Button handleClick={addInput}>0</Button>
+            <Button handleClick={addInput}>.</Button>
+            <Button handleClick={equalFn}>=</Button>
           </div>
         </div>
       </div>

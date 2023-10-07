@@ -8,7 +8,7 @@
   width: 80px;
   height: 80px;
   border-radius: 5px;
-  background-image: linear-gradient(to left, #00c853, #b2ff59);
+  background-image: linear-gradient(135deg, #b2ff59 30%, #0cd660 100%);
   color: #232323;
   transition: all ease-in-out 100ms;
   cursor: context-menu;

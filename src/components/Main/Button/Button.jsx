@@ -18,7 +18,7 @@ export const Button = (props) => {
       className={`btn ${isOperator(props.children) ? 'operator' : ''} ${
         equal(props.children) ? 'equal' : ''
       } ${clear(props.children) ? 'clear' : ''}`.trim()}
-      onClick={() => props.onClick(props.children)}>
+      onClick={() => props.handleClick(props.children)}>
       {props.children}
     </div>
   );
