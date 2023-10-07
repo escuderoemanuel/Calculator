@@ -24,7 +24,7 @@
 }
 
 .clear:hover {
-  transform: scale(1.03) rotate(1deg);
+  transform: scale(1.03) rotate(-1deg);
 
   color: whitesmoke;
 }

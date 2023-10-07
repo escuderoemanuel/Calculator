@@ -1,4 +1,4 @@
 import './Clear.css';
-export const Clear = () => {
-  return <div className='clear'>Clear</div>;
+export const Clear = (props) => {
+  return <div className='clear'>{props.children}</div>;
 };
