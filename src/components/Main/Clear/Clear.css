@@ -12,8 +12,9 @@
   background-color: #505050;
   color: whitesmoke;
   transition: all ease-in-out 100ms;
-  cursor: context-menu;
+  user-select: none;
   margin: 5px;
+  box-shadow: 1px 1px 1px 1px #232323;
 }
 
 .clear::after {
@@ -31,4 +32,12 @@
 
 .clear:active {
   transform: scale(0.99);
+}
+
+@media screen and (max-width: 700px) {
+  .clear {
+    height: 60px;
+    width: 200px;
+    margin: 0 5px;
+  }
 }

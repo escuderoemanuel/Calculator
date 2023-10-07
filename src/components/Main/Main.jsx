@@ -21,7 +21,11 @@ export const Main = () => {
 
   // Equal Fn
   const equalFn = () => {
-    setInput(evaluate(input));
+    if (input) {
+      setInput(evaluate(input));
+    } else {
+      alert('Ingresa un valor');
+    }
   };
 
   return (
@@ -63,3 +67,4 @@ export const Main = () => {
     </section>
   );
 };
+
