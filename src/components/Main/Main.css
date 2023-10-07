@@ -1,0 +1,29 @@
+.main {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedorCalculadora {
+  width: fit-content;
+  height: auto;
+  border-radius: 10px;
+  background-color: #313131;
+  border: 2px solid rgb(128, 128, 128);
+  padding: 10px;
+}
+
+.calculadora {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  height: 90px;
+}

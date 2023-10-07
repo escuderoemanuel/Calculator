@@ -1,0 +1,40 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  font-weight: bolder;
+  background-color: green;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  background-image: linear-gradient(to left, #00c853, #b2ff59);
+  color: #232323;
+  transition: all ease-in-out 100ms;
+  cursor: context-menu;
+  margin: 5px;
+}
+
+.btn:hover {
+  transform: scale(1.03) rotate(1deg);
+
+  color: whitesmoke;
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+.operator {
+  display: inline-block;
+  text-align: center;
+  font-size: 50px;
+  background-image: none;
+  background-color: #505050;
+  color: whitesmoke;
+  font-weight: lighter;
+}
+
+.equal {
+  width: 170px;
+}
