@@ -4,10 +4,14 @@ import { Display } from './Display/Display';
 import './Main.css';
 import { useState } from 'react';
 import { evaluate } from 'mathjs';
+import { add } from '../../logic/logicMath';
 
 export const Main = () => {
   /* Initial State of Display Input */
   const [input, setInput] = useState('');
+
+  /* Initial State of Display Result */
+  const [result, setResult] = useState(0);
 
   // Add Input on Display
   const addInput = (value) => {
@@ -17,12 +21,15 @@ export const Main = () => {
   // Clear Button
   const clearDisplay = () => {
     setInput('');
+    setResult(0);
   };
 
   // Equal Fn
   const equalFn = () => {
     if (input) {
-      setInput(evaluate(input));
+      const operation = evaluate(input);
+      //setInput(evaluate(input));
+      setResult(operation);
     } else {
       alert('Ingresa un valor');
     }
@@ -33,7 +40,7 @@ export const Main = () => {
       <div className='contenedorCalculadora'>
         <div className='calculadora'>
           <div className='display'>
-            <Display input={input} />
+            <Display input={input} result={result} />
           </div>
           <div className='row'>
             <Clear handleClick={clearDisplay}>Clear</Clear>
@@ -67,4 +74,3 @@ export const Main = () => {
     </section>
   );
 };
-

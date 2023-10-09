@@ -4,12 +4,11 @@
   align-items: center;
   font-size: 2.5em;
   font-weight: bolder;
-  background-color: green;
   width: 80px;
   height: 80px;
   border-radius: 5px;
-  background-image: linear-gradient(135deg, #b2ff59 30%, #0cd660 100%);
-  color: #232323;
+  background-color: #232323;
+  color: grey;
   transition: all ease-in-out 100ms;
   user-select: none;
   margin: 5px;
@@ -38,6 +37,8 @@
 
 .equal {
   width: 170px;
+  background-color: rgb(179, 179, 179);
+  color: #232323;
 }
 
 @media screen and (max-width: 700px) {
