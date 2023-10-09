@@ -3,7 +3,6 @@ import { Clear } from './Clear/Clear';
 import { Display } from './Display/Display';
 import './Main.css';
 import { useState } from 'react';
-import { evaluate } from 'mathjs';
 import {
   add,
   subtraction,
@@ -45,14 +44,14 @@ export const Main = () => {
   // Función equalFn para realizar operaciones matemáticas
   const equalFn = () => {
     if (input) {
-      const parts = input.split(/([\+\-\*\/])/); // Divide la entrada en números y operadores
+      const parts = input.split(/([\+\-\×\÷])/); // Divide la entrada en números y operadores
       const numbers = [];
       const operators = [];
 
       // Separa los números y operadores
       for (let part of parts) {
         part = part.trim();
-        if (part === '+' || part === '-' || part === '*' || part === '/') {
+        if (part === '+' || part === '-' || part === '×' || part === '÷') {
           operators.push(part);
         } else if (part !== '') {
           numbers.push(parseFloat(part));
@@ -75,9 +74,9 @@ export const Main = () => {
           result = add(result, nextNumber);
         } else if (operator === '-') {
           result = subtraction(result, nextNumber);
-        } else if (operator === '*') {
+        } else if (operator === '×') {
           result = multiplication(result, nextNumber);
-        } else if (operator === '/') {
+        } else if (operator === '÷') {
           result = division(result, nextNumber);
           if (
             result === 'Invalid Operation' ||
@@ -104,13 +103,13 @@ export const Main = () => {
           </div>
           <div className='row'>
             <Clear handleClick={clearDisplay}>Clear</Clear>
-            <Button handleClick={addInput}>/</Button>
+            <Button handleClick={addInput}>÷</Button>
           </div>
           <div className='row'>
             <Button handleClick={addInput}>7</Button>
             <Button handleClick={addInput}>8</Button>
             <Button handleClick={addInput}>9</Button>
-            <Button handleClick={addInput}>*</Button>
+            <Button handleClick={addInput}>×</Button>
           </div>
           <div className='row'>
             <Button handleClick={addInput}>4</Button>

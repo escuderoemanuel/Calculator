@@ -89,9 +89,9 @@ const equalFn = () => {
         result = add(result, nextNumber);
       } else if (operator === '-') {
         result = subtraction(result, nextNumber);
-      } else if (operator === '*') {
+      } else if (operator === '×') {
         result = multiplication(result, nextNumber);
-      } else if (operator === '/') {
+      } else if (operator === '÷') {
         result = division(result, nextNumber);
         if (
           result === 'Invalid Operation' ||
