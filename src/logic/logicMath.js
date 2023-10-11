@@ -1,21 +1,25 @@
 // Add function
 export function add(...numbers) {
-  return numbers.reduce((result, number) => result + number, 0);
+  const finalRessult = numbers.reduce((result, number) => result + number, 0);
+  return finalRessult.toFixed(2);
 }
 
 // Subtraction function
 export function subtraction(...numbers) {
   if (numbers.length >= 2) {
-    return numbers.reduce((result, number) => result - number);
+    const finalRessult = numbers.reduce((result, number) => result - number);
+    return finalRessult.toFixed(2);
   } else {
-    return numbers.reduce((result, number) => result - 0);
+    const finalRessult = numbers.reduce((result, number) => result - 0);
+    return finalRessult.toFixed(2);
   }
 }
 
 // Division function
 export function division(...numbers) {
   if (numbers.length >= 2) {
-    return numbers.reduce((result, number) => result / number);
+    const finalRessult = numbers.reduce((result, number) => result / number);
+    return finalRessult.toFixed(2);
   } else if (numbers.includes(0)) {
     return 'You cannot calculate the division with zero';
   } else {
@@ -25,7 +29,8 @@ export function division(...numbers) {
 
 // Multiplication function
 export function multiplication(...numbers) {
-  return numbers.reduce((result, number) => result * number);
+  const finalRessult = numbers.reduce((result, number) => result * number);
+  return finalRessult.toFixed(2);
 }
 
 // Resto function
@@ -37,12 +42,17 @@ export function rest(...numbers) {
     return 'You cannot calculate the remainder with zero.';
   }
   const [firstNumber, ...restNumbers] = numbers;
-  return restNumbers.reduce((result, number) => rest % number, firstNumber);
+  const finalRessult = restNumbers.reduce(
+    (result, number) => rest % number,
+    firstNumber
+  );
+  return finalRessult.toFixed(2);
 }
 
 // Percentage function
 function percentage(number, percentage) {
-  return (number * percentage) / 100;
+  const finalRessult = (number * percentage) / 100;
+  return finalRessult.toFixed(2);
 }
 
 // Change Sign function
@@ -53,58 +63,3 @@ export function changeSign() {
     display.value = newValue;
   }
 }
-
-// Importa o define todas las funciones de operaciones matemáticas aquí
-
-// Función equalFn para realizar operaciones matemáticas
-const equalFn = () => {
-  if (input) {
-    const parts = input.split(/([\+\-\*\/])/); // Divide la entrada en números y operadores
-    const numbers = [];
-    const operators = [];
-
-    // Separa los números y operadores
-    for (let part of parts) {
-      part = part.trim();
-      if (part === '+' || part === '-' || part === '*' || part === '/') {
-        operators.push(part);
-      } else if (part !== '') {
-        numbers.push(parseFloat(part));
-      }
-    }
-
-    if (numbers.length === 0 || operators.length === 0) {
-      alert('Entrada no válida');
-      return;
-    }
-
-    // Realiza las operaciones matemáticas
-    let result = numbers[0];
-
-    for (let i = 0; i < operators.length; i++) {
-      const operator = operators[i];
-      const nextNumber = numbers[i + 1];
-
-      if (operator === '+') {
-        result = add(result, nextNumber);
-      } else if (operator === '-') {
-        result = subtraction(result, nextNumber);
-      } else if (operator === '×') {
-        result = multiplication(result, nextNumber);
-      } else if (operator === '÷') {
-        result = division(result, nextNumber);
-        if (
-          result === 'Invalid Operation' ||
-          result === 'You cannot calculate the division with zero'
-        ) {
-          alert(result);
-          return;
-        }
-      }
-    }
-
-    setResult(result);
-  } else {
-    alert('Ingresa un valor');
-  }
-};
