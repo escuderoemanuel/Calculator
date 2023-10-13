@@ -25,11 +25,11 @@
   transform: scale(0.99);
 }
 
-.operator {
-  display: inline-block;
-  text-align: center;
-  font-size: 50px;
-  background-image: none;
+.operator,
+.btnPercent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #505050;
   color: whitesmoke;
   font-weight: lighter;
@@ -41,16 +41,16 @@
   color: #232323;
 }
 
+.btnPercent {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
 @media screen and (max-width: 700px) {
   .btn {
     width: 60px;
     height: 60px;
     margin: 0 5px 0 5px;
-  }
-
-  .operator {
-    font-size: 50px;
-    display: flex;
   }
 
   .equal {

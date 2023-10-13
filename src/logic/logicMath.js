@@ -50,7 +50,7 @@ export function rest(...numbers) {
 }
 
 // Percentage function
-function percentage(number, percentage) {
+export function percentage(number, percentage) {
   const finalRessult = (number * percentage) / 100;
   return finalRessult.toFixed(2);
 }

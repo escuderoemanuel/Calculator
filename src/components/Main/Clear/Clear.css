@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 260px;
+  width: 170px;
   border-radius: 5px;
   text-transform: uppercase;
   font-size: x-large;
@@ -37,7 +37,7 @@
 @media screen and (max-width: 700px) {
   .clear {
     height: 60px;
-    width: 200px;
+    width: 130px;
     margin: 0 5px;
   }
 }

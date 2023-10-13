@@ -2,7 +2,7 @@ import './Button.css';
 
 export const Button = (props) => {
   const isOperator = (value) => {
-    return isNaN(value) && value != '.' && value != '0';
+    return isNaN(value) && value != '.' && value != '0' && value != '%';
   };
 
   const equal = (value) => {
@@ -13,9 +13,14 @@ export const Button = (props) => {
     return value === 'Clear';
   };
 
+  const isPercent = (value) => {
+    return value === '%';
+  };
+
   return (
     <div
-      className={`btn ${isOperator(props.children) ? 'operator' : ''} ${
+      className={`btn ${isPercent(props.children) ? 'btnPercent' : ''}
+      ${isOperator(props.children) ? 'operator' : ''} ${
         equal(props.children) ? 'equal' : ''
       } ${clear(props.children) ? 'clear' : ''}`.trim()}
       onClick={() => props.handleClick(props.children)}>
