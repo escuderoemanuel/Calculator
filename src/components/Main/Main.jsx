@@ -9,6 +9,7 @@ import {
   multiplication,
   division,
   percentage,
+  recoil,
 } from '../../logic/logicMath';
 
 export const Main = () => {
@@ -29,14 +30,20 @@ export const Main = () => {
     setResult(0);
   };
 
-  // Función equalFn para realizar operaciones matemáticas
+  // Recoil
+  const recoilNumber = () => {
+    setInput(recoil);
+  };
+
+  // equalFn to realize math operations
   const equalFn = () => {
     if (input) {
-      const parts = input.split(/([\+\-\×\%\÷])/); // Divide la entrada en números y operadores
+      // These signs divide the operation
+      const parts = input.split(/([+\-×%÷])/);
       const numbers = [];
       const operators = [];
 
-      // Separa los números y operadores
+      // Separate numbers and operators
       for (let part of parts) {
         part = part.trim();
         if (
@@ -57,7 +64,7 @@ export const Main = () => {
         return;
       }
 
-      // Realiza las operaciones matemáticas
+      // It does the math operations
       let result = numbers[0];
 
       for (let i = 0; i < operators.length; i++) {
@@ -78,9 +85,9 @@ export const Main = () => {
           ) {
             alert(result);
             return;
-          } else if (operator === '%') {
-            result = percentage(result, nextNumber);
           }
+        } else if (operator === '%') {
+          result = percentage(result, nextNumber);
         }
       }
 
@@ -98,7 +105,8 @@ export const Main = () => {
             <Display input={input} result={result} />
           </div>
           <div className='row'>
-            <Clear handleClick={clearDisplay}>Clear</Clear>
+            <Clear handleClick={clearDisplay}>C</Clear>
+            <Button handleClick={recoilNumber}>⇦</Button>
             <Button handleClick={addInput}>%</Button>
             <Button handleClick={addInput}>÷</Button>
           </div>

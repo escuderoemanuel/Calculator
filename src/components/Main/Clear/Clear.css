@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
+  width: 80px;
   border-radius: 5px;
   text-transform: uppercase;
   font-size: x-large;
@@ -19,9 +19,9 @@
 
 .clear::after {
   content: '!';
-  font-size: xx-large;
-  margin-left: 2px;
-  color: rgb(255, 0, 106);
+  font-size: x-large;
+  margin-left: 5px;
+  color: rgb(255, 0, 0);
 }
 
 .clear:hover {
@@ -37,7 +37,7 @@
 @media screen and (max-width: 700px) {
   .clear {
     height: 60px;
-    width: 130px;
+    width: 60px;
     margin: 0 5px;
   }
 }
