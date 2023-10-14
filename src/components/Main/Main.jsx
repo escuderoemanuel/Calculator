@@ -35,6 +35,12 @@ export const Main = () => {
     setInput(recoil);
   };
 
+  // Change Sign
+  /*   const changeSign = () => {
+    setInput(change);
+  };
+ */
+
   // equalFn to realize math operations
   const equalFn = () => {
     if (input) {
@@ -106,6 +112,7 @@ export const Main = () => {
           </div>
           <div className='row'>
             <Clear handleClick={clearDisplay}>C</Clear>
+            {/*  <Button handleClick={changeSign}>+/-</Button> */}
             <Button handleClick={recoilNumber}>⇦</Button>
             <Button handleClick={addInput}>%</Button>
             <Button handleClick={addInput}>÷</Button>
