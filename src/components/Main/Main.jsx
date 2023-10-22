@@ -12,6 +12,10 @@ import {
   recoil,
 } from '../../logic/logicMath';
 
+// ToDo:
+//  - Si el último caracter es operador y se selecciona otro operador, debe reemplazar el anterior con el seleccionado
+//  - Obtenido un resultado, se puede seleccionar un operador. Si se selecciona un número, debe resetear iniciando una operación nueva completamente
+
 export const Main = () => {
   /* Initial State of Display Input */
   const [input, setInput] = useState('');
