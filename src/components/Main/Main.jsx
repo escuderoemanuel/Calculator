@@ -12,10 +12,6 @@ import {
   recoil,
 } from '../../logic/logicMath';
 
-// ToDo:
-//  - Si el último caracter es operador y se selecciona otro operador, debe reemplazar el anterior con el seleccionado
-//  - Obtenido un resultado, se puede seleccionar un operador. Si se selecciona un número, debe resetear iniciando una operación nueva completamente
-
 export const Main = () => {
   /* Initial State of Display Input */
   const [input, setInput] = useState('');
@@ -23,9 +19,35 @@ export const Main = () => {
   /* Initial State of Display Result */
   const [result, setResult] = useState(0);
 
+  /* Check if lastInputIsOperator */
+  const [lastInputIsOperator, setLastInputIsOperator] = useState(false);
+
+  const handleNumberInputAfterResult = (value) => {
+    setInput(value); // Set new value as entered number
+    setResult(0); // Reset result to zero 0
+    setLastInputIsOperator(false); // Reset lastInputIsOperator's state
+  };
+
   // Add Input on Display
   const addInput = (value) => {
-    setInput(`${input}${value}`);
+    // Declare operators
+    const isOperator = ['+', '-', '×', '÷', '%'].includes(value);
+
+    if (result !== 0 && isOperator) {
+      setInput(result + value);
+      setResult(0);
+    } else if (result !== 0 && !isNaN(parseFloat(value))) {
+      // If a result has been calculated and a number is pressed, it starts a new operation
+      handleNumberInputAfterResult(value);
+    } else {
+      setInput(
+        lastInputIsOperator && isOperator
+          ? input.slice(0, -1) + value
+          : input + value
+      );
+      // Updates lastInputIsOperator's state with the entered value
+      setLastInputIsOperator(isOperator);
+    }
   };
 
   // Clear Button
@@ -38,12 +60,6 @@ export const Main = () => {
   const recoilNumber = () => {
     setInput(recoil);
   };
-
-  // Change Sign
-  /*   const changeSign = () => {
-    setInput(change);
-  };
- */
 
   // equalFn to realize math operations
   const equalFn = () => {
@@ -99,9 +115,10 @@ export const Main = () => {
         } else if (operator === '%') {
           result = percentage(result, nextNumber);
         }
-      }
 
-      setResult(result);
+        setResult(result);
+      }
+      setLastInputIsOperator(false);
     } else {
       alert('Ingresa un valor');
     }
@@ -116,7 +133,6 @@ export const Main = () => {
           </div>
           <div className='row'>
             <Clear handleClick={clearDisplay}>C</Clear>
-            {/*  <Button handleClick={changeSign}>+/-</Button> */}
             <Button handleClick={recoilNumber}>⇦</Button>
             <Button handleClick={addInput}>%</Button>
             <Button handleClick={addInput}>÷</Button>

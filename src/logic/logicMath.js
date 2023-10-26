@@ -47,10 +47,6 @@ export function multiplication(...numbers) {
 }
 
 // Percentage function
-/* export function percentage(number, percentage) {
-  const finalResult = (number * percentage) / 100;
-  return Number.isInteger(finalResult) ? finalResult : finalResult.toFixed(2);
-} */
 export function percentage(number, percentage) {
   if (isNaN(percentage)) {
     return 0;
@@ -59,18 +55,6 @@ export function percentage(number, percentage) {
     return Number.isInteger(finalResult) ? finalResult : finalResult.toFixed(2);
   }
 }
-
-// Change Sign function
-/* export function change(number) {
-  if (typeof number === 'number') {
-    return (number *= -1); // Change sign
-  } else {
-    return number; // Retorn initial value
-  }
-} */
-/* export function change(number) {
-  return (number *= -1); // Change sign
-} */
 
 //  Recoil Btn
 export function recoil(numbers) {
