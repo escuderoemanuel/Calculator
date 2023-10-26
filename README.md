@@ -5,14 +5,18 @@ Emanuel Escudero
 FrontEnd Developer
 Web calculator application.
 
+
 Created With
+
 [React] (https://reactjs.org/) - Javascript Framework/Library - Version 18.2.0
 [Vite] (https://vitejs.dev/)
 
 About the project
+
 URL: (https://emanuel-calculator.netlify.app/)
 Github Repository: (https://github.com/escuderoemanuel/Calculator)
 Author: Emanuel Escudero
+
 Requirements
 It is necessary to install the dependencies listed in the package.json file
 
