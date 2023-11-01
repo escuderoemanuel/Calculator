@@ -1,10 +1,8 @@
 Calculator Web!
 
-
 Emanuel Escudero
 FrontEnd Developer
 Web calculator application.
-
 
 Created With
 
@@ -15,7 +13,7 @@ About the project
 
 URL: (https://emanuel-calculator.netlify.app/)
 Github Repository: (https://github.com/escuderoemanuel/Calculator)
-Author: Emanuel Escudero
+Author: Emanuel Escudero (https://emanuelescudero.ar)
 
 Requirements
 It is necessary to install the dependencies listed in the package.json file
