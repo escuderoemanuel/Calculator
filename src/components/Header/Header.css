@@ -1,5 +1,7 @@
 .header {
-  padding: 1rem;
+  /* padding: 1rem; */
+  padding: 0 2rem;
+  min-height: 10vh;
   display: flex;
   justify-content: start;
   background: rgb(113, 190, 126);
